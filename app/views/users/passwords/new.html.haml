@@ -1,0 +1,16 @@
+.well.sidebar-nav.forms
+  .form-container
+    %h2 Відновлення паролю
+
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = devise_error_messages!
+
+      .field
+        = f.label :email
+        %br
+        = f.email_field :email, autofocus: true
+
+      .actions
+        = f.submit 'Відновити пароль'
+
+    = render 'users/shared/links'

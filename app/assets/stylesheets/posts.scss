@@ -1,0 +1,202 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post_wrapper{
+  position: relative;
+}
+
+.to_post{
+  position: absolute;
+  z-index: 51;
+  width: 100%;
+  height: 65%;
+}
+
+.title a{
+  color: #333;
+}
+
+.title a:hover{
+  color: #777;
+  text-decoration: none;
+}
+
+.title a:visited{
+  color: #333;
+}
+
+.post_actions{
+  color: #777;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.post_actions:hover{
+  color: #555 !important;
+  text-decoration: none;
+}
+
+a.post_actions:visited{
+  color: #777;
+  text-decoration: none;
+}
+
+.text{
+  max-height: 2em;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.date{
+  font-size: 10px;
+  font-style: italic;
+}
+
+.user-photo{
+  width: 100%;
+  height: 100%;
+}
+
+.photo-container{
+  background-color: rgba(30, 30, 30, 0.1);
+  padding: 8px;
+  box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.post_actions{
+  font-size: 12px;
+}
+
+.wall{
+  border-radius: 20px;
+  background-color: rgba(30, 30, 30, 0.1);
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+.post_wrapper .row{
+  margin: 0;
+  padding: 5px 20px;
+}
+
+hr{
+  border-color: rgba(0,0,0,0.1);
+}
+
+.minimized {
+  max-width: 880px;
+  margin: 0 auto 20px auto;
+  padding: 0;
+
+  .details .page-header{
+    margin: 0;
+  }
+
+  .page-header {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  p {
+    margin: 0;
+    padding: 10px 25px;
+  }
+
+  p.post-description {
+    padding: 1em 25px;
+    vertical-align: middle;
+    min-height: 5em;
+  }
+
+  .post-title {
+    background-color: rgba(200, 200, 200, 0.2);
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .comment-caption, .new-comment-caption {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  .comment-caption {
+    background-color: rgba(200, 200, 200, 0.5);
+  }
+
+  .new-comment-caption {
+    text-align: center;
+  }
+
+  .comment {
+    text-align: right;
+    border: 5px solid rgba(200, 200, 200, 0.5);
+  }
+
+  .post {
+    border: 5px solid rgba(200, 200, 200, 0.5);
+  }
+
+  .comments{
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+
+  p.comment-author {
+    font-size: 1.1em;
+    background-color: rgba(200, 200, 200, 0.2);
+    font-weight: bold;
+    padding: 0.5em 15px;
+    .post_actions{
+      text-align: left;
+    }
+  }
+
+  p.comment-body {
+    font-size: 1em;
+    padding: 0.5em 25px;
+  }
+
+  .new-comment {
+    background-color: rgba(200, 200, 200, 0.5);
+    p {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    form textarea {
+      width: 100%;
+      height: 5em;
+      border-radius: 0 0 5px 5px;
+      padding: 0.25em 25px;
+    }
+    padding: 0 5px 5px 5px;
+  }
+
+  p.new-comment-author {
+    font-size: 1.1em;
+    background-color: rgba(200, 200, 200, 0.6);
+    font-weight: bold;
+    padding: 10px 25px;
+  }
+
+  p.new-comment-body {
+    padding: 0;
+  }
+
+  p.new-comment-submit {
+    text-align: right;
+  }
+
+  .comment-actions {
+    background-color: rgba(200, 200, 200, 0.5);
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+.new-post-description{
+  padding: 0.5em auto;
+  min-height: 7em;
+}
+
+
+

@@ -1,0 +1,23 @@
+.well.sidebar-nav.minimized
+  -unless @post.comments.empty?
+    %p.comment-caption Коментарі
+    .comments
+      - @post.comments.each do |comment|
+        .comment
+          .page-header
+            %p.comment-author
+              = comment.author
+              = link_to 'X', post_comment_path(@post, comment), :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'post_actions'
+          %p.comment-body
+            = comment.body
+
+  .new-comment
+    %p.new-comment-caption Залишити коментар
+    = form_for [@post, @post.comments.build] do |f|
+      %p.new-comment-author
+        = f.label nil, 'Від кого: ' + @author
+        = f.hidden_field :author, value: @author
+      %p.new-comment-body
+        = f.text_area :body
+      %p.new-comment-submit
+        = f.submit 'Коментувати', class: 'btn btn-primary'

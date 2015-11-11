@@ -1,0 +1,5 @@
+# Add application configuration variables here, as shown below.
+#
+GMAIL_DOMAIN: gmail.com
+GMAIL_USERNAME: kek@gmail.com
+GMAIL_PASSWORD: kek

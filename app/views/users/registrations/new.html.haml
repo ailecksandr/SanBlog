@@ -1,0 +1,29 @@
+.well.sidebar-nav.forms
+  .form-container
+    %h2 Реєстрація
+
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+
+      .field
+        = f.label :email
+        %br
+        = f.email_field :email, autofocus: true
+
+      .field
+        = f.label :password
+        -if @minimum_password_length
+          %em
+            = @minimum_password_length
+            characters minimum)
+        %br
+        = f.password_field :password, autocomplete: 'off'
+
+      .field
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation, autocomplete: 'off'
+
+      .actions
+        = f.submit 'Зареєструватись'
+
+    = render 'users/shared/links'

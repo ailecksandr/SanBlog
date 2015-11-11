@@ -1,0 +1,27 @@
+.well.sidebar-nav
+  .row
+    .col-lg-3
+      .photo-container
+        %img( src="/assets/kek.jpg" class="user-photo")
+    .col-lg-9
+      .page-header
+        %h1 Sunstrikovich
+      .wall
+        - @posts.each do |post|
+          .post_wrapper
+            = link_to '', post, class: 'to_post'
+            .row.next-line
+              %h3{ class: 'title' }
+                = link_to post.title, post
+              %h4{ class: 'text' }
+                = post.description
+              %p{ class: 'date' }
+                = time_ago_in_words(post.created_at)
+              .post-actions
+                = link_to 'Редагувати', edit_post_path(post), :class => 'post_actions'
+                |
+                = link_to 'Видалити', post_path(post), :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'post_actions'
+                |
+                = link_to "Comments(#{post.comments.count})", post_comments_path(post), :class => 'post_actions'
+                %hr
+      = link_to 'Додати пост', new_post_path, :class => 'btn btn-primary right'

@@ -1,0 +1,35 @@
+.well.sidebar-nav.minimized
+  .details
+    .post
+      %p.post-title
+        = @post.title.titleize
+
+      %p.post-description
+        = @post.description.titleize
+
+    -unless @post.comments.empty?
+      %p.comment-caption Коментарі
+      .comments
+        - @post.comments.each do |comment|
+          .comment
+            .page-header
+              %p.comment-author
+                = comment.author
+                = link_to 'X', post_comment_path(@post, comment), :method => 'delete', :data => { :confirm => 'Are you sure?' }, :class => 'post_actions'
+
+            %p.comment-body
+              = comment.body
+    .new-comment
+      %p.new-comment-caption Залишити коментар
+      = form_for [@post, @post.comments.build] do |f|
+        %p.new-comment-author
+          = f.label nil, 'Від кого: ' + @author
+          = f.hidden_field :author, value: @author
+        %p.new-comment-body
+          = f.text_area :body
+        %p.new-comment-submit
+          = f.submit 'Коментувати', class: 'btn btn-primary'
+    - if user_signed_in?
+      .comment-actions
+        = link_to 'Редагувати', edit_post_path(@post), class: 'btn btn-default'
+        = link_to 'Видалити', post_path(@post), :method => 'delete', :data => { :confirm => 'Ви впевнені?'}, :class => 'btn btn-default'
